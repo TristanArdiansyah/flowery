@@ -155,6 +155,7 @@
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
     animation: fadeInUp 1s ease-out 2.5s forwards;
+    width: 80vw;
 }
 
 .continue-btn:hover {
