@@ -20,13 +20,15 @@
             <div class="envelope" id="envelope" onclick="openEnvelope()">
                 <div class="envelope-flap"></div>
                 <div class="envelope-front">
-                    
+
                 </div>
                 <div class="letter">
                     <h2>Happy Birthday</h2>
                     <p>Dear Nana,</p>
-                    <p>I have promised you to give you a bouquet of flowers, and i have promised you a website uniquely mine, and uniquely my work.</p>
-                    <p>I am sorry I couldn't give you a real one. I wanted to, but right now it seems not very wise for me to do that.  </p>
+                    <p>I have promised you to give you a bouquet of flowers, and i have promised you a website uniquely
+                        mine, and uniquely my work.</p>
+                    <p>I am sorry I couldn't give you a real one. I wanted to, but right now it seems not very wise for
+                        me to do that. </p>
                     <p>With all my love,<br>Happy Birthday.</p>
                 </div>
                 <div class="sparkles" id="sparkles"></div>
@@ -36,25 +38,28 @@
                 ✨ Tap the envelope to open your letter ✨
             </div>
 
-            <button class="continue-btn" id="continueBtn" onclick="enterApp()" >
-                 Open Your Gift Here. 
+            <button class="continue-btn" id="continueBtn" onclick="enterApp()">
+                Open Your Gift Here.
             </button>
         </div>
     </div>
 
     <!-- Main App Content -->
     <div class="main-content" id="mainContent">
-        
+
         <div class="app-container">
             <h1>🌸 Flowerify Bouquet 🌸</h1>
-            <p class="subtitle">You can make and customize your own bouquet, its just you and your creativity, let loose.</p>
+            <p class="subtitle">You can make and customize your own bouquet, its just you and your creativity, let
+                loose.</p>
             <div class="tab-buttons">
                 <button class="tab-btn active" onclick="showTab('draw')">🎨 Draw</button>
                 <button class="tab-btn" onclick="showTab('bouquet')">💐 Bouquet</button>
+                <button class="tab-btn" onclick="showTab('mine')">🪻 Mine</button>
             </div>
 
             <!-- Drawing Tab -->
-            <div id="drawTab" class="tab-content active" style="background: linear-gradient(to bottom, #f8f9ff 0%, #e8f5e8 100%)">
+            <div id="drawTab" class="tab-content active"
+                style="background: linear-gradient(to bottom, #f8f9ff 0%, #e8f5e8 100%)">
                 <h3 class="section-title">🎨 Draw Your Flowers</h3>
                 <canvas id="drawingCanvas" width="320" height="320"></canvas>
 
@@ -104,6 +109,19 @@
                     <button class="btn" onclick="saveBouquet()">💾 Save</button>
                     <button class="btn danger" onclick="clearBouquet()">🗑️ Clear</button>
                 </div>
+            </div>
+            <!-- Mine Tab -->
+
+            <div id="mineTab" class="tab-content">
+                <h3 class="section-title">💐 Tristan's Bouquet</h3>
+
+                <img src="tristan-bouquet.png" id="bouquetCanvas" width="320" height="380"></img>
+                <p style="padding: 10%;">Well, here's my best attempt at making bouquet with my own tools. By the way,
+                    its not the only gift i have. Do ask me for the other one if you are interested. I also completely
+                    understand if you don't want to.
+                    <br><br>
+                    If you read this, thank you very much for experiencing this. It means a lot.
+                </p>
             </div>
         </div>
 
@@ -532,7 +550,7 @@
             document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
 
             document.querySelector(`[onclick="showTab('${tabName}')"]`).classList.add('active');
-            document.getElementById(tabName === 'draw' ? 'drawTab' : 'bouquetTab').classList.add('active');
+            document.getElementById(tabName === 'draw' ? 'drawTab' : tabName === 'mine' ? 'mineTab' : 'bouquetTab').classList.add('active');
         }
 
         // Initialize
